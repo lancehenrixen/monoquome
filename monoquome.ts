@@ -26,28 +26,28 @@ export async function monoquome(buffer: Buffer): Promise<string[]> {
     for (const chunk of range) {
       line += getChar(chunk);
     }
-    lines.push(line.trimRight());
+    lines.push(line);
   }
   return lines;
 }
 
 const CHARS: [string, Chunk][] = [
-  ["▘",   [[W, B], [B, B]]],
-  ["▖",   [[B, W], [B, B]]],
-  ["▗",   [[B, B], [B, W]]],
-  ["▝",   [[B, B], [W, B]]],
-  ["▌",   [[W, W], [B, B]]],
-  ["▚",   [[W, B], [B, W]]],
-  ["▞",   [[B, W], [W, B]]],
-  ["▐",   [[B, B], [W, W]]],
-  [" ",   [[B, B], [B, B]]],
-  ["█",   [[W, W], [W, W]]],
-  ["▙",   [[W, W], [B, W]]],
-  ["▟",   [[B, W], [W, W]]],
-  ["▛",   [[W, W], [W, B]]],
-  ["▜",   [[W, B], [W, W]]],
-  ["▀",   [[W, B], [W, B]]],
-  ["▄",   [[B, W], [B, W]]],
+  ["▘", [[W, B], [B, B]]],
+  ["▖", [[B, W], [B, B]]],
+  ["▗", [[B, B], [B, W]]],
+  ["▝", [[B, B], [W, B]]],
+  ["▌", [[W, W], [B, B]]],
+  ["▚", [[W, B], [B, W]]],
+  ["▞", [[B, W], [W, B]]],
+  ["▐", [[B, B], [W, W]]],
+  [" ", [[B, B], [B, B]]],
+  ["█", [[W, W], [W, W]]],
+  ["▙", [[W, W], [B, W]]],
+  ["▟", [[B, W], [W, W]]],
+  ["▛", [[W, W], [W, B]]],
+  ["▜", [[W, B], [W, W]]],
+  ["▀", [[W, B], [W, B]]],
+  ["▄", [[B, W], [B, W]]],
 ];
 
 function getChar([[c1, c2], [c3, c4]]: Chunk) {
